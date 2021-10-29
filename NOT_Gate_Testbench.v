@@ -4,6 +4,12 @@ module not_tb;
   notgate ng(.a(ta), .y(ty));
   initial
     begin
+    $dumpfile("dump.vcd");
+    $dumpvars;
+    #50 $finish;
+  end
+  initial
+    begin
       $monitor (ta, ty);
       ta = 1'b0;
       #10
